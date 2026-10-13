@@ -1,0 +1,40 @@
+table Date
+	lineageTag: 98b1bda9-793d-4089-8bbd-10d6ee39ec10
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: dd-mmm-yyyy
+		lineageTag: 6e7b9641-484a-4efa-9e5f-48a6322d59fb
+		sourceColumn: [Date]
+
+	column Year
+		dataType: int64
+		lineageTag: 984a87d8-34fd-452a-b164-81d318887a8c
+		sourceColumn: [Year]
+
+	column Month
+		dataType: string
+		lineageTag: 912beecb-aa2c-4b45-81b2-3b960657b210
+		sourceColumn: [Month]
+		sortByColumn: MonthNo
+
+	column MonthNo
+		dataType: int64
+		lineageTag: 5dde1fc8-89a5-4cf3-b535-bd6fa3a4883c
+		sourceColumn: [MonthNo]
+
+	column Day
+		dataType: int64
+		lineageTag: f14ad68b-0d9b-476a-a203-5b6841c7c329
+		sourceColumn: [Day]
+
+	column 'Is Current Month'
+		dataType: boolean
+		lineageTag: 5508425f-5814-4a62-86fb-a2a1a6218dfc
+		sourceColumn: [Is Current Month]
+
+	partition Date = calculated
+		source = ADDCOLUMNS(CALENDAR(DATE(2025,1,1), DATE(2027,12,31)), "Year", YEAR([Date]), "Month", FORMAT([Date], "mmm yyyy"), "MonthNo", YEAR([Date])*100+MONTH([Date]), "Day", DAY([Date]), "Is Current Month", YEAR([Date]) = YEAR(TODAY()) && MONTH([Date]) = MONTH(TODAY()))
+

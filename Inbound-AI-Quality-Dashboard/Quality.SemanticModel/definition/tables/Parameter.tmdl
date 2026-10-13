@@ -1,0 +1,16 @@
+table Parameter
+	lineageTag: f0549ceb-6a13-4e39-9735-ae575031ced2
+
+	column Parameter
+		dataType: string
+		lineageTag: fdda39cf-20c4-49ff-806a-79954866ae3f
+		sourceColumn: [Parameter]
+
+	column Group
+		dataType: string
+		lineageTag: 1688952a-acec-4599-81e9-f83fc9c3b7f8
+		sourceColumn: [Group]
+
+	partition Parameter = calculated
+		source = DATATABLE("Parameter", STRING, "Group", STRING, { {"call_answered_within_5_seconds", "Opening"}, {"professionalism_maintained", "Soft skill"}, {"assurance_or_appreciation_provided", "Soft skill"}, {"pronunciation_and_clarity", "Soft skill"}, {"enthusiasm_and_no_fumbling", "Soft skill"}, {"active_listening", "Soft skill"}, {"politeness_and_no_sarcasm", "Soft skill"}, {"proper_grammar", "Soft skill"}, {"accurate_issue_probing", "Soft skill"}, {"customer_concern_acknowledged", "Soft skill"}, {"proper_hold_procedure", "Hold"}, {"proper_transfer_and_language", "Hold"}, {"dead_air_under_10_seconds", "Hold"}, {"case_escalated_correctly", "Resolution"}, {"address_recorded_completely", "Resolution"}, {"correct_and_complete_information", "Resolution"}, {"upselling_or_offers_suggested", "Resolution"}, {"further_assistance_offered", "Closing"}, {"proper_call_closure", "Closing"} })
+
