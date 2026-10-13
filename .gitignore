@@ -1,0 +1,14 @@
+# secrets / logins
+*.env
+!*.env.example
+# data and dashboards (customer data - never commit)
+*.xlsb
+*.xlsx
+*.xls
+*.csv
+Backups/
+Data/
+Logs/
+Oct'26/
+__pycache__/
+*.pyc
