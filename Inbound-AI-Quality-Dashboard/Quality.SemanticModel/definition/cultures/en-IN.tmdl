@@ -1,0 +1,1070 @@
+cultureInfo en-IN
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "quality.clientid": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "ClientId"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Process": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.total_audits": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Total Audits"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Audits": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.cq_score_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "CQ Score %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "CQ %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.fatal_audits": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Fatal Audits"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Fatal": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.target_cq_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Target CQ %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Target (95)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.param_pass_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Param Pass %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pass %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.average_audits": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Average Audits"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Average": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.excellent_audits": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Excellent Audits"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Excellent": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.calldate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "CallDate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Call date": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.user": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "User"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Agent": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.scenario": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "scenario"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Scenario": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.quality_percentage": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "quality_percentage"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Quality %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.quality_band": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Quality Band"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Category": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.call_category": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Call Category"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Fatal?": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.below_average_audits": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Below Average Audits"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Below Average": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Below Avg": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.good_audits": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Good Audits"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Good": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.opening_skill_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Opening Skill %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Opening": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.soft_skill_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Soft Skill %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Soft Skill": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Soft": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.hold_procedure_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Hold Procedure %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Hold": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.resolution_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Resolution %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Resolution": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.closing_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Closing %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Closing": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.avg_component_score_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Avg Component Score %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Avg Component %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.agent_rank": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Agent Rank"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Rank": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.agent_grade": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Agent Grade"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Grade": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.tq_calls_80": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "TQ Calls (>=80)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TQ calls": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.mq_calls_6079": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "MQ Calls (60-79)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "MQ calls": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.bq_calls_60": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "BQ Calls (<60)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "BQ calls": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.areas_for_improvement": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "areas_for_improvement"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Areas for improvement": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.param_evaluated": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Param Evaluated"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Evaluated": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.param_pass": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Param Pass"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pass": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.param_fail": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Param Fail"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Fail": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.param_fail_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Param Fail %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Fail %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.scenario_share_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Scenario Share %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Share": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.duration_bucket": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Duration Bucket"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Duration": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.cq_score_incl__fatal_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "CQ Score incl. Fatal %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Score %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.avg_call_duration_sec": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Avg Call Duration (sec)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Avg sec": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.lead_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "lead_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Lead ID": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.call_recording": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "call_recording"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Recording": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.cq_score_w_o_fatal_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "CQ Score W/O Fatal %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "CQ Score % (W/O Fatal)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.abuse_flag": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Abuse Flag"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Abuse": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.scam_flag": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Scam Flag"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Scam": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.social_court_flag": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Social Court Flag"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Social/Court": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.top_negative_words": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "top_negative_words"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Top negative words": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.sensetive_word": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "sensetive_word"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Sensitive word": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.social_media__court_threat_calls": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Social Media & Court Threat Calls"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Social Media & Court Threats": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Threat calls": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.potential_scam_calls": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Potential Scam Calls"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Scam calls": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.abuse_calls": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "Abuse Calls"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Abuse calls": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Audit ID": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "quality.scenario1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Quality",
+			          "ConceptualProperty": "scenario1"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Scenario 1": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

@@ -1,0 +1,473 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "f031bd76bea74f4d9bae",
+  "position": {
+    "x": 24,
+    "y": 154,
+    "z": 8000,
+    "height": 550,
+    "width": 1232
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "CallDate"
+                }
+              },
+              "queryRef": "Quality.CallDate",
+              "nativeQueryRef": "CallDate",
+              "displayName": "Call date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "ClientId"
+                }
+              },
+              "queryRef": "Quality.ClientId",
+              "nativeQueryRef": "ClientId",
+              "displayName": "Process"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "User"
+                }
+              },
+              "queryRef": "Quality.User",
+              "nativeQueryRef": "User",
+              "displayName": "Agent"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "lead_id"
+                }
+              },
+              "queryRef": "Quality.lead_id",
+              "nativeQueryRef": "lead_id",
+              "displayName": "Lead ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "id"
+                }
+              },
+              "queryRef": "Quality.id",
+              "nativeQueryRef": "id",
+              "displayName": "Audit ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "quality_percentage"
+                }
+              },
+              "queryRef": "Quality.quality_percentage",
+              "nativeQueryRef": "quality_percentage",
+              "displayName": "Quality %"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "Quality Band"
+                }
+              },
+              "queryRef": "Quality.Quality Band",
+              "nativeQueryRef": "Quality Band",
+              "displayName": "Category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "Call Category"
+                }
+              },
+              "queryRef": "Quality.Call Category",
+              "nativeQueryRef": "Call Category",
+              "displayName": "Fatal?"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "scenario"
+                }
+              },
+              "queryRef": "Quality.scenario",
+              "nativeQueryRef": "scenario",
+              "displayName": "Scenario"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "scenario1"
+                }
+              },
+              "queryRef": "Quality.scenario1",
+              "nativeQueryRef": "scenario1",
+              "displayName": "Scenario 1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "Duration Bucket"
+                }
+              },
+              "queryRef": "Quality.Duration Bucket",
+              "nativeQueryRef": "Duration Bucket",
+              "displayName": "Duration"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "areas_for_improvement"
+                }
+              },
+              "queryRef": "Quality.areas_for_improvement",
+              "nativeQueryRef": "areas_for_improvement",
+              "displayName": "Areas for improvement"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "call_recording"
+                }
+              },
+              "queryRef": "Quality.call_recording",
+              "nativeQueryRef": "call_recording",
+              "displayName": "Recording"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Quality"
+                  }
+                },
+                "Property": "CallDate"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0B2A5B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0F172A'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0F172A'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#F4F7FB'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E2E8F0'"
+                    }
+                  }
+                }
+              }
+            },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D5DEEA'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Audit Detail (filter by agent, date, process, category)'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0B2A5B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

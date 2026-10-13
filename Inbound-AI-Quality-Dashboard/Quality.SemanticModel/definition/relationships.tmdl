@@ -1,0 +1,4 @@
+relationship DateQuality
+	fromColumn: Quality.'Call Date'
+	toColumn: Date.Date
+

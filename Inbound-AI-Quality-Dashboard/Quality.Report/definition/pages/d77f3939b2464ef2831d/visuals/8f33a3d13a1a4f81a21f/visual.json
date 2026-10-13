@@ -1,0 +1,473 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "8f33a3d13a1a4f81a21f",
+  "position": {
+    "x": 24,
+    "y": 84,
+    "z": 4000,
+    "height": 620,
+    "width": 790
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "User"
+                }
+              },
+              "queryRef": "Quality.User",
+              "nativeQueryRef": "User",
+              "displayName": "Agent"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "Total Audits"
+                }
+              },
+              "queryRef": "Quality.Total Audits",
+              "nativeQueryRef": "Total Audits",
+              "displayName": "Audits"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "CQ Score %"
+                }
+              },
+              "queryRef": "Quality.CQ Score %",
+              "nativeQueryRef": "CQ Score %",
+              "displayName": "CQ %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "Agent Rank"
+                }
+              },
+              "queryRef": "Quality.Agent Rank",
+              "nativeQueryRef": "Agent Rank",
+              "displayName": "Rank"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "Agent Grade"
+                }
+              },
+              "queryRef": "Quality.Agent Grade",
+              "nativeQueryRef": "Agent Grade",
+              "displayName": "Grade"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "Fatal Audits"
+                }
+              },
+              "queryRef": "Quality.Fatal Audits",
+              "nativeQueryRef": "Fatal Audits",
+              "displayName": "Fatal"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "Excellent Audits"
+                }
+              },
+              "queryRef": "Quality.Excellent Audits",
+              "nativeQueryRef": "Excellent Audits",
+              "displayName": "Excellent"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "Good Audits"
+                }
+              },
+              "queryRef": "Quality.Good Audits",
+              "nativeQueryRef": "Good Audits",
+              "displayName": "Good"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "Average Audits"
+                }
+              },
+              "queryRef": "Quality.Average Audits",
+              "nativeQueryRef": "Average Audits",
+              "displayName": "Average"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "Below Average Audits"
+                }
+              },
+              "queryRef": "Quality.Below Average Audits",
+              "nativeQueryRef": "Below Average Audits",
+              "displayName": "Below Avg"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "TQ Calls (>=80)"
+                }
+              },
+              "queryRef": "Quality.TQ Calls (>=80)",
+              "nativeQueryRef": "TQ Calls (>=80)",
+              "displayName": "TQ calls"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "MQ Calls (60-79)"
+                }
+              },
+              "queryRef": "Quality.MQ Calls (60-79)",
+              "nativeQueryRef": "MQ Calls (60-79)",
+              "displayName": "MQ calls"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quality"
+                    }
+                  },
+                  "Property": "BQ Calls (<60)"
+                }
+              },
+              "queryRef": "Quality.BQ Calls (<60)",
+              "nativeQueryRef": "BQ Calls (<60)",
+              "displayName": "BQ calls"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Quality"
+                  }
+                },
+                "Property": "CQ Score %"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0B2A5B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0F172A'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0F172A'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#F4F7FB'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E2E8F0'"
+                    }
+                  }
+                }
+              }
+            },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D5DEEA'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Agent Performance Ranking'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0B2A5B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

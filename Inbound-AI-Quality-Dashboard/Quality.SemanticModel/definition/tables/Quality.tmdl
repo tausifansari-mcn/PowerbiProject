@@ -1,0 +1,1059 @@
+table Quality
+	lineageTag: 02cf80d7-bd19-4107-86c5-61e541402299
+
+	measure 'Total Audits' = CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE())
+		formatString: #,0
+		displayFolder: 1 Core KPIs
+		lineageTag: f6089f25-ac90-4fac-ba44-15af56012b02
+
+	measure 'CQ Score %' = ROUND(CALCULATE(AVERAGE(Quality[CQ Ratio]), Quality[Is Audited]=TRUE(), Quality[NonFatal Flag]=1)*100, 1)
+		formatString: 0.0"%"
+		displayFolder: 1 Core KPIs
+		lineageTag: 83642331-db02-4b58-80a5-7e2c35c7fa85
+
+	measure 'CQ Score W/O Fatal %' = ROUND(CALCULATE(AVERAGE(Quality[CQ Ratio]), Quality[Is Audited]=TRUE(), Quality[NonFatal Flag]=1)*100, 1)
+		formatString: 0.0"%"
+		displayFolder: 1 Core KPIs
+		lineageTag: 7b6e2571-7d3b-4fd2-9a85-b679b37c6797
+
+	measure 'CQ Score incl. Fatal %' = ROUND(CALCULATE(AVERAGE(Quality[CQ Ratio]), Quality[Is Audited]=TRUE())*100, 1)
+		formatString: 0.0"%"
+		displayFolder: 1 Core KPIs
+		lineageTag: b5b50ebd-c55d-45a1-b5da-e146e5970294
+
+	measure 'Excellent Audits' = CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[quality_percentage] >= 98)
+		formatString: #,0
+		displayFolder: 2 Quality Bands
+		lineageTag: 08931869-482d-466d-bc1c-292c05ab393b
+
+	measure 'Good Audits' = CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[quality_percentage] >= 90, Quality[quality_percentage] < 98)
+		formatString: #,0
+		displayFolder: 2 Quality Bands
+		lineageTag: 5e9b3889-619a-472b-a341-8f8a2a5f5829
+
+	measure 'Average Audits' = CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[quality_percentage] >= 85, Quality[quality_percentage] < 90)
+		formatString: #,0
+		displayFolder: 2 Quality Bands
+		lineageTag: 06c7d551-0d8d-4992-90b1-cb32e6f89c13
+
+	measure 'Below Average Audits' = CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[quality_percentage] > 0, Quality[quality_percentage] < 85)
+		formatString: #,0
+		displayFolder: 2 Quality Bands
+		lineageTag: 7e2307dd-fcf0-4e42-a668-cb124a464403
+
+	measure 'Excellent %' = DIVIDE([Excellent Audits], [Total Audits])
+		formatString: 0.0%
+		displayFolder: 2 Quality Bands
+		lineageTag: 987994eb-131c-410a-b6a2-d2d40de10453
+
+	measure 'Good %' = DIVIDE([Good Audits], [Total Audits])
+		formatString: 0.0%
+		displayFolder: 2 Quality Bands
+		lineageTag: 4501d68f-f700-4c98-89a5-ce64e64b3385
+
+	measure 'Average %' = DIVIDE([Average Audits], [Total Audits])
+		formatString: 0.0%
+		displayFolder: 2 Quality Bands
+		lineageTag: 4927677b-80e7-44e1-9e8d-10b294e3c141
+
+	measure 'Below Average %' = DIVIDE([Below Average Audits], [Total Audits])
+		formatString: 0.0%
+		displayFolder: 2 Quality Bands
+		lineageTag: 6362377e-1a3e-4907-b7de-05794381cc13
+
+	measure 'Fatal Audits' = CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[Fatal Flag]=1)
+		formatString: #,0
+		displayFolder: 3 Fatal
+		lineageTag: 7208ae62-cb5d-489d-8378-b373bcf4b54d
+
+	measure 'Fatal %' = ROUND(DIVIDE([Fatal Audits], [Total Audits])*100, 1)
+		formatString: 0.0"%"
+		displayFolder: 3 Fatal
+		lineageTag: edf28fb4-6f73-4736-970a-db9823be04d7
+
+	measure 'Opening Skill %' = ROUND(CALCULATE(AVERAGE(Quality[Opening Ratio]), Quality[Is Audited]=TRUE())*100, 1)
+		formatString: 0.0"%"
+		displayFolder: 4 Score Components
+		lineageTag: d79dad8d-b2e5-4b4f-b5df-0a22865e2662
+
+	measure 'Soft Skill %' = ROUND(CALCULATE(AVERAGE(Quality[Soft Ratio]), Quality[Is Audited]=TRUE())*100, 1)
+		formatString: 0.0"%"
+		displayFolder: 4 Score Components
+		lineageTag: e2a1a675-67da-4fd1-9871-e13e32225b7b
+
+	measure 'Hold Procedure %' = ROUND(CALCULATE(AVERAGE(Quality[Hold Ratio]), Quality[Is Audited]=TRUE())*100, 1)
+		formatString: 0.0"%"
+		displayFolder: 4 Score Components
+		lineageTag: 3f2a4b57-a15d-4cb3-96d9-d2b3d674da79
+
+	measure 'Resolution %' = ROUND(CALCULATE(AVERAGE(Quality[Resolution Ratio]), Quality[Is Audited]=TRUE())*100, 1)
+		formatString: 0.0"%"
+		displayFolder: 4 Score Components
+		lineageTag: 99ab606f-7339-4d5b-8a50-01d6b91d7865
+
+	measure 'Closing %' = ROUND(CALCULATE(AVERAGE(Quality[Closing Ratio]), Quality[Is Audited]=TRUE())*100, 1)
+		formatString: 0.0"%"
+		displayFolder: 4 Score Components
+		lineageTag: e6c35d56-83c0-41e8-a559-061ee5b8d3d2
+
+	measure 'Avg Component Score %' = DIVIDE([Opening Skill %]+[Soft Skill %]+[Hold Procedure %]+[Resolution %]+[Closing %], 5)
+		formatString: 0.0"%"
+		displayFolder: 4 Score Components
+		lineageTag: 9fc7981f-1ed7-4665-9384-9588dcfde044
+
+	measure 'TQ Calls (>=80)' = CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[quality_percentage] >= 80)
+		formatString: #,0
+		displayFolder: 5 Agent
+		lineageTag: a134579d-37c7-48b7-bfd3-1bae6b8ea996
+
+	measure 'MQ Calls (60-79)' = CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[quality_percentage] >= 60, Quality[quality_percentage] < 80)
+		formatString: #,0
+		displayFolder: 5 Agent
+		lineageTag: 53de2063-ebcb-41f4-9b61-678f3be76fd9
+
+	measure 'BQ Calls (<60)' = CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[quality_percentage] > 0, Quality[quality_percentage] < 60)
+		formatString: #,0
+		displayFolder: 5 Agent
+		lineageTag: 3453412d-a3ef-449f-8a28-de594ea5d506
+
+	measure 'Agent Rank' = IF(HASONEVALUE(Quality[User]), RANKX(ALLSELECTED(Quality[User]), [CQ Score %], , DESC, Dense))
+		formatString: 0
+		displayFolder: 5 Agent
+		lineageTag: ef7ea69e-934c-4336-9382-8735b31898d0
+
+	measure 'Agent Grade' = SWITCH(TRUE(), ISBLANK([CQ Score %]), BLANK(), [CQ Score %] >= 90, "TQ", [CQ Score %] >= 80, "MQ", "BQ")
+		displayFolder: 5 Agent
+		lineageTag: dd1c483e-e10f-495a-a3bb-63023a08c3da
+
+	measure 'Active Agents' = CALCULATE(DISTINCTCOUNT(Quality[User]), Quality[Is Audited]=TRUE())
+		formatString: #,0
+		displayFolder: 5 Agent
+		lineageTag: 4e01c4b4-0f3a-4a61-a0b0-a42d5e1e7571
+
+	measure 'Param Evaluated' = SWITCH(SELECTEDVALUE(Parameter[Parameter]), "call_answered_within_5_seconds", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[call_answered_within_5_seconds]))), "professionalism_maintained", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[professionalism_maintained]))), "assurance_or_appreciation_provided", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[assurance_or_appreciation_provided]))), "pronunciation_and_clarity", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[pronunciation_and_clarity]))), "enthusiasm_and_no_fumbling", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[enthusiasm_and_no_fumbling]))), "active_listening", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[active_listening]))), "politeness_and_no_sarcasm", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[politeness_and_no_sarcasm]))), "proper_grammar", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[proper_grammar]))), "accurate_issue_probing", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[accurate_issue_probing]))), "customer_concern_acknowledged", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[customer_concern_acknowledged]))), "proper_hold_procedure", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[proper_hold_procedure]))), "proper_transfer_and_language", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[proper_transfer_and_language]))), "dead_air_under_10_seconds", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[dead_air_under_10_seconds]))), "case_escalated_correctly", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[case_escalated_correctly]))), "address_recorded_completely", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[address_recorded_completely]))), "correct_and_complete_information", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[correct_and_complete_information]))), "upselling_or_offers_suggested", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[upselling_or_offers_suggested]))), "further_assistance_offered", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[further_assistance_offered]))), "proper_call_closure", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), NOT(ISBLANK(Quality[proper_call_closure]))), BLANK())
+		formatString: #,0
+		displayFolder: 6 Parameters
+		lineageTag: c0e474a0-6fac-4a7c-abf4-3fd467824dd3
+
+	measure 'Param Pass' = SWITCH(SELECTEDVALUE(Parameter[Parameter]), "call_answered_within_5_seconds", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[call_answered_within_5_seconds]=TRUE()), "professionalism_maintained", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[professionalism_maintained]=TRUE()), "assurance_or_appreciation_provided", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[assurance_or_appreciation_provided]=TRUE()), "pronunciation_and_clarity", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[pronunciation_and_clarity]=TRUE()), "enthusiasm_and_no_fumbling", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[enthusiasm_and_no_fumbling]=TRUE()), "active_listening", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[active_listening]=TRUE()), "politeness_and_no_sarcasm", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[politeness_and_no_sarcasm]=TRUE()), "proper_grammar", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[proper_grammar]=TRUE()), "accurate_issue_probing", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[accurate_issue_probing]=TRUE()), "customer_concern_acknowledged", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[customer_concern_acknowledged]=TRUE()), "proper_hold_procedure", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[proper_hold_procedure]=TRUE()), "proper_transfer_and_language", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[proper_transfer_and_language]=TRUE()), "dead_air_under_10_seconds", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[dead_air_under_10_seconds]=TRUE()), "case_escalated_correctly", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[case_escalated_correctly]=TRUE()), "address_recorded_completely", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[address_recorded_completely]=TRUE()), "correct_and_complete_information", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[correct_and_complete_information]=TRUE()), "upselling_or_offers_suggested", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[upselling_or_offers_suggested]=TRUE()), "further_assistance_offered", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[further_assistance_offered]=TRUE()), "proper_call_closure", CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[proper_call_closure]=TRUE()), BLANK())
+		formatString: #,0
+		displayFolder: 6 Parameters
+		lineageTag: af9b2b54-67f0-4efa-b9e7-1d05c513abcc
+
+	measure 'Param Fail' = [Param Evaluated]-[Param Pass]
+		formatString: #,0
+		displayFolder: 6 Parameters
+		lineageTag: 1eadfc4c-b8e0-4343-b33c-5c7a5f298fa5
+
+	measure 'Param Pass %' = DIVIDE([Param Pass], [Param Evaluated])
+		formatString: 0.0%
+		displayFolder: 6 Parameters
+		lineageTag: 78fd7f7e-ea7b-411f-9c32-cffc84916843
+
+	measure 'Param Fail %' = DIVIDE([Param Fail], [Param Evaluated])
+		formatString: 0.0%
+		displayFolder: 6 Parameters
+		lineageTag: 512934bf-ca1b-49bd-b07c-4d67336a9a7b
+
+	measure 'Abuse Calls' = CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[Abuse Flag]=1)
+		formatString: #,0
+		displayFolder: 7 Customer Insights
+		lineageTag: d0b417cc-04ca-49fa-a0e9-6e88a0444245
+
+	measure 'Potential Scam Calls' = CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[Scam Flag]=1)
+		formatString: #,0
+		displayFolder: 7 Customer Insights
+		lineageTag: 617e7d27-a91d-4ab4-934b-79b06ae3544d
+
+	measure 'Social Media & Court Threat Calls' = CALCULATE(COUNTROWS(Quality), Quality[Is Audited]=TRUE(), Quality[Social Court Flag]=1)
+		formatString: #,0
+		displayFolder: 7 Customer Insights
+		lineageTag: 82bef79f-bfa4-4a59-b012-c06c8d554571
+
+	measure 'Scenario Share %' = DIVIDE([Total Audits], CALCULATE([Total Audits], ALLSELECTED(Quality[scenario])))
+		formatString: 0.0%
+		displayFolder: 8 Scenario & Duration
+		lineageTag: 74a1deef-f168-4bfe-9e95-1a31644f4303
+
+	measure 'Avg Call Duration (sec)' = CALCULATE(AVERAGE(Quality[Duration Sec]), Quality[Is Audited]=TRUE())
+		formatString: #,0
+		displayFolder: 8 Scenario & Duration
+		lineageTag: fa0ed01a-0460-41a3-8ec3-3d7b8b82371e
+
+	measure 'Target CQ %' = 95
+		formatString: 0"%"
+		displayFolder: 1 Core KPIs
+		lineageTag: 53544332-615f-4e59-acfa-9dbfb19cb112
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: eef05455-0cc5-45bd-9cc5-7ff682747d69
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientId
+		dataType: string
+		lineageTag: 9015e9d3-88ab-44e6-8ab0-00203d4c1f02
+		summarizeBy: none
+		sourceColumn: ClientId
+
+		annotation SummarizationSetBy = Automatic
+
+	column length_in_sec
+		dataType: string
+		lineageTag: 550bf4f0-6fe8-4c69-b079-52fcb4c3f6ed
+		summarizeBy: none
+		sourceColumn: length_in_sec
+
+		annotation SummarizationSetBy = Automatic
+
+	column start_epoch
+		dataType: string
+		lineageTag: 0b40420d-2c03-4636-bed6-53aa10009799
+		summarizeBy: none
+		sourceColumn: start_epoch
+
+		annotation SummarizationSetBy = Automatic
+
+	column end_epoch
+		dataType: string
+		lineageTag: be3e37ee-10bc-408c-ac74-26cc467c2499
+		summarizeBy: none
+		sourceColumn: end_epoch
+
+		annotation SummarizationSetBy = Automatic
+
+	column MobileNo
+		dataType: string
+		lineageTag: d27b595d-a1c6-4800-b683-4265c01b35ba
+		summarizeBy: none
+		sourceColumn: MobileNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column User
+		dataType: string
+		lineageTag: ce1023cb-b2ed-4e90-befb-859f87ccf33d
+		summarizeBy: none
+		sourceColumn: User
+
+		annotation SummarizationSetBy = Automatic
+
+	column lead_id
+		dataType: string
+		lineageTag: 1dc16b01-346b-486f-89f0-af09f03295d7
+		summarizeBy: none
+		sourceColumn: lead_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column CallDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d52f931a-dbdb-4a97-ba26-edc52f53c6a2
+		summarizeBy: none
+		sourceColumn: CallDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column Campaign
+		dataType: string
+		lineageTag: cf55e6a4-4051-4d59-b0e8-0a7c58b2008a
+		summarizeBy: none
+		sourceColumn: Campaign
+
+		annotation SummarizationSetBy = Automatic
+
+	column call_answered_within_5_seconds
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 02737f42-21f3-423d-8fc0-3050787aca12
+		summarizeBy: none
+		sourceColumn: call_answered_within_5_seconds
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_concern_acknowledged
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 59ef719c-f460-47af-b6a4-87418c1e3cb7
+		summarizeBy: none
+		sourceColumn: customer_concern_acknowledged
+
+		annotation SummarizationSetBy = Automatic
+
+	column professionalism_maintained
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f3cd2bf9-4b0a-41a9-adb1-9c919826f55c
+		summarizeBy: none
+		sourceColumn: professionalism_maintained
+
+		annotation SummarizationSetBy = Automatic
+
+	column assurance_or_appreciation_provided
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7d84deb1-cc2c-4706-9211-362c793aabb5
+		summarizeBy: none
+		sourceColumn: assurance_or_appreciation_provided
+
+		annotation SummarizationSetBy = Automatic
+
+	column pronunciation_and_clarity
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8b583ddb-2d95-48b4-b0e0-a4b0897119bc
+		summarizeBy: none
+		sourceColumn: pronunciation_and_clarity
+
+		annotation SummarizationSetBy = Automatic
+
+	column enthusiasm_and_no_fumbling
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5182d4f6-296f-4eb8-8e79-351a3377b2ea
+		summarizeBy: none
+		sourceColumn: enthusiasm_and_no_fumbling
+
+		annotation SummarizationSetBy = Automatic
+
+	column active_listening
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8f2d46f5-89ec-4915-9d8d-2d51f22c9c83
+		summarizeBy: none
+		sourceColumn: active_listening
+
+		annotation SummarizationSetBy = Automatic
+
+	column politeness_and_no_sarcasm
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c262129a-3d6b-450a-be78-7b1860449c7f
+		summarizeBy: none
+		sourceColumn: politeness_and_no_sarcasm
+
+		annotation SummarizationSetBy = Automatic
+
+	column proper_grammar
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: fc23042f-5e1d-47f6-9ff7-8a6f3eb21959
+		summarizeBy: none
+		sourceColumn: proper_grammar
+
+		annotation SummarizationSetBy = Automatic
+
+	column accurate_issue_probing
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 44f50e57-f949-4d63-b7e9-e4141567ce2c
+		summarizeBy: none
+		sourceColumn: accurate_issue_probing
+
+		annotation SummarizationSetBy = Automatic
+
+	column proper_hold_procedure
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f53afab3-35b9-4620-ba7b-c23fa8912c48
+		summarizeBy: none
+		sourceColumn: proper_hold_procedure
+
+		annotation SummarizationSetBy = Automatic
+
+	column proper_transfer_and_language
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0b236bff-0b62-4dec-9f0c-064e077dd36a
+		summarizeBy: none
+		sourceColumn: proper_transfer_and_language
+
+		annotation SummarizationSetBy = Automatic
+
+	column dead_air_under_10_seconds
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7be19651-6303-4173-89ac-e3dd48be4a61
+		summarizeBy: none
+		sourceColumn: dead_air_under_10_seconds
+
+		annotation SummarizationSetBy = Automatic
+
+	column case_escalated_correctly
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0eb397b1-238a-4c21-99fd-bde925a58a36
+		summarizeBy: none
+		sourceColumn: case_escalated_correctly
+
+		annotation SummarizationSetBy = Automatic
+
+	column address_recorded_completely
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c4ca6060-4b67-47bb-b46a-c26949a94027
+		summarizeBy: none
+		sourceColumn: address_recorded_completely
+
+		annotation SummarizationSetBy = Automatic
+
+	column correct_and_complete_information
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ac798896-f7b4-4d1b-a341-93fb39cb31f6
+		summarizeBy: none
+		sourceColumn: correct_and_complete_information
+
+		annotation SummarizationSetBy = Automatic
+
+	column upselling_or_offers_suggested
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4c599fbf-fea6-4743-8b9d-8d4121fcdea5
+		summarizeBy: none
+		sourceColumn: upselling_or_offers_suggested
+
+		annotation SummarizationSetBy = Automatic
+
+	column further_assistance_offered
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8ccc90c7-78c6-4d69-ac9c-b9653e8fab1a
+		summarizeBy: none
+		sourceColumn: further_assistance_offered
+
+		annotation SummarizationSetBy = Automatic
+
+	column proper_call_closure
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 95165f12-e3eb-404d-b5af-2663c9f5a1c9
+		summarizeBy: none
+		sourceColumn: proper_call_closure
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 5278ab79-82dd-4472-b41e-507971390fc9
+		summarizeBy: sum
+		sourceColumn: total_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 7a2a3985-bf9d-4e6c-a047-99d4d432c6a3
+		summarizeBy: sum
+		sourceColumn: max_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column quality_percentage
+		dataType: double
+		lineageTag: 487142ec-bac1-497d-8791-f8f18235af68
+		summarizeBy: sum
+		sourceColumn: quality_percentage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 40c3ead6-43cc-41a3-a6bb-6c81921030a1
+		summarizeBy: none
+		sourceColumn: created_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column express_empathy
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f564927c-2d7e-4797-9af8-25ef1a350349
+		summarizeBy: none
+		sourceColumn: express_empathy
+
+		annotation SummarizationSetBy = Automatic
+
+	column areas_for_improvement
+		dataType: string
+		lineageTag: 0b293bc5-174e-42ba-91e6-947687b1313b
+		summarizeBy: none
+		sourceColumn: areas_for_improvement
+
+		annotation SummarizationSetBy = Automatic
+
+	column top_positive_words
+		dataType: string
+		lineageTag: e3ed67b0-cd6a-4be6-9831-504cc82aaa5c
+		summarizeBy: none
+		sourceColumn: top_positive_words
+
+		annotation SummarizationSetBy = Automatic
+
+	column top_negative_words
+		dataType: string
+		lineageTag: 437db9d4-420f-417a-aac2-4c6e921ff87f
+		summarizeBy: none
+		sourceColumn: top_negative_words
+
+		annotation SummarizationSetBy = Automatic
+
+	column agent_english_cuss_words
+		dataType: string
+		lineageTag: 26cd7f90-4e0e-4a9a-a590-3656ac439887
+		summarizeBy: none
+		sourceColumn: agent_english_cuss_words
+
+		annotation SummarizationSetBy = Automatic
+
+	column agent_english_cuss_count
+		dataType: int64
+		formatString: 0
+		lineageTag: cbfba56c-afd4-49fd-99f3-d2986477d62a
+		summarizeBy: sum
+		sourceColumn: agent_english_cuss_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column agent_hindi_cuss_words
+		dataType: string
+		lineageTag: d68aa2ed-8349-4692-823f-b17592e15fd6
+		summarizeBy: none
+		sourceColumn: agent_hindi_cuss_words
+
+		annotation SummarizationSetBy = Automatic
+
+	column agent_hindi_cuss_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 311aadcc-8374-4c0f-bef0-4ad983ed0d06
+		summarizeBy: sum
+		sourceColumn: agent_hindi_cuss_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_hindi_cuss_words
+		dataType: string
+		lineageTag: 57c4992d-3656-4a0a-a47e-683e31e80bb5
+		summarizeBy: none
+		sourceColumn: customer_hindi_cuss_words
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_hindi_cuss_count
+		dataType: int64
+		formatString: 0
+		lineageTag: d692fcf6-5350-46d0-91a4-6932b0806142
+		summarizeBy: sum
+		sourceColumn: customer_hindi_cuss_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_english_cuss_words
+		dataType: string
+		lineageTag: 284eb5e4-ca6a-4da7-846b-ca47d55c4fec
+		summarizeBy: none
+		sourceColumn: customer_english_cuss_words
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_english_cuss_count
+		dataType: int64
+		formatString: 0
+		lineageTag: d06bd3f8-f2e4-4a0d-930b-37eb14065aa7
+		summarizeBy: sum
+		sourceColumn: customer_english_cuss_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column scenario
+		dataType: string
+		lineageTag: 56e2e720-4852-44c0-b166-23315ce5589a
+		summarizeBy: none
+		sourceColumn: scenario
+
+		annotation SummarizationSetBy = Automatic
+
+	column scenario1
+		dataType: string
+		lineageTag: 76ecbc54-39a0-4380-9d65-0b33051a20d6
+		summarizeBy: none
+		sourceColumn: scenario1
+
+		annotation SummarizationSetBy = Automatic
+
+	column scenario2
+		dataType: string
+		lineageTag: 85356602-dfff-4279-a405-68c5b27db7df
+		summarizeBy: none
+		sourceColumn: scenario2
+
+		annotation SummarizationSetBy = Automatic
+
+	column scenario3
+		dataType: string
+		lineageTag: 68feb191-efba-4e00-ac50-60a3b7dd3499
+		summarizeBy: none
+		sourceColumn: scenario3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Transcribe_Text
+		dataType: string
+		lineageTag: ffa4664a-7da6-4be1-9c82-9b4f1ca4d3ff
+		summarizeBy: none
+		sourceColumn: Transcribe_Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column Competitor_Name
+		dataType: string
+		lineageTag: d55b07f2-9f71-443d-acb4-f20b5ee66342
+		summarizeBy: none
+		sourceColumn: Competitor_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Positive_Comparison
+		dataType: string
+		lineageTag: ad496d89-5bbe-4a93-a110-a27c069a6233
+		summarizeBy: none
+		sourceColumn: Positive_Comparison
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reason_for_Positive_Comparison
+		dataType: string
+		lineageTag: 529ea916-8718-4dd4-81a7-273be16ad632
+		summarizeBy: none
+		sourceColumn: Reason_for_Positive_Comparison
+
+		annotation SummarizationSetBy = Automatic
+
+	column Exact_Positive_Language
+		dataType: string
+		lineageTag: 87994cfd-b79d-4507-9628-4454ee75ede4
+		summarizeBy: none
+		sourceColumn: Exact_Positive_Language
+
+		annotation SummarizationSetBy = Automatic
+
+	column Negative_Comparison
+		dataType: string
+		lineageTag: 4169043c-5cc1-4eb0-a7cb-df45d08eda51
+		summarizeBy: none
+		sourceColumn: Negative_Comparison
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reason_for_Negative_Comparison
+		dataType: string
+		lineageTag: dd7376c2-ddc5-4117-9099-1f4ba7b3f03f
+		summarizeBy: none
+		sourceColumn: Reason_for_Negative_Comparison
+
+		annotation SummarizationSetBy = Automatic
+
+	column Exact_Negative_Language
+		dataType: string
+		lineageTag: f0ed435a-6ace-42c1-a224-3c246dd29e48
+		summarizeBy: none
+		sourceColumn: Exact_Negative_Language
+
+		annotation SummarizationSetBy = Automatic
+
+	column sensetive_word
+		dataType: string
+		lineageTag: 601d599e-29d7-46f9-bb41-1c26d127145c
+		summarizeBy: none
+		sourceColumn: sensetive_word
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_theft_or_misuse
+		dataType: string
+		lineageTag: ab953d76-df9a-4e0c-ba15-4b69cd49dcd0
+		summarizeBy: none
+		sourceColumn: data_theft_or_misuse
+
+		annotation SummarizationSetBy = Automatic
+
+	column unprofessional_behavior
+		dataType: string
+		lineageTag: 7a64b23a-cca1-4d89-b135-97da8285be0e
+		summarizeBy: none
+		sourceColumn: unprofessional_behavior
+
+		annotation SummarizationSetBy = Automatic
+
+	column system_manipulation
+		dataType: string
+		lineageTag: bb69de15-21cd-4b86-a9e1-8b156aff9aad
+		summarizeBy: none
+		sourceColumn: system_manipulation
+
+		annotation SummarizationSetBy = Automatic
+
+	column financial_fraud
+		dataType: string
+		lineageTag: dd078158-feb5-4d17-8c91-7667c4da8724
+		summarizeBy: none
+		sourceColumn: financial_fraud
+
+		annotation SummarizationSetBy = Automatic
+
+	column escalation_failure
+		dataType: string
+		lineageTag: 5dc120d8-af3e-41de-802b-a2451abaa49b
+		summarizeBy: none
+		sourceColumn: escalation_failure
+
+		annotation SummarizationSetBy = Automatic
+
+	column collusion
+		dataType: string
+		lineageTag: 18a4613a-a928-41b2-85a8-1c7498fd1bc1
+		summarizeBy: none
+		sourceColumn: collusion
+
+		annotation SummarizationSetBy = Automatic
+
+	column policy_communication_failure
+		dataType: string
+		lineageTag: 7993a719-9949-4fdb-a1eb-c4a0a564782a
+		summarizeBy: none
+		sourceColumn: policy_communication_failure
+
+		annotation SummarizationSetBy = Automatic
+
+	column overall_fraud_risk_score
+		dataType: string
+		lineageTag: 9535cb76-3ee7-4a5b-9c43-63bceae9e3ee
+		summarizeBy: none
+		sourceColumn: overall_fraud_risk_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column fraud_potentiality_percentage
+		dataType: string
+		lineageTag: 4aade011-365c-41f3-b442-d581f8ab71f7
+		summarizeBy: none
+		sourceColumn: fraud_potentiality_percentage
+
+		annotation SummarizationSetBy = Automatic
+
+	column areas_for_improvement_fraud
+		dataType: string
+		lineageTag: 1e9de14a-9e9a-4de2-ac11-726111956629
+		summarizeBy: none
+		sourceColumn: areas_for_improvement_fraud
+
+		annotation SummarizationSetBy = Automatic
+
+	column top_positive_words_agent
+		dataType: string
+		lineageTag: fb1c6031-aee7-4748-b78d-fc5f81adf203
+		summarizeBy: none
+		sourceColumn: top_positive_words_agent
+
+		annotation SummarizationSetBy = Automatic
+
+	column top_negative_words_agent
+		dataType: string
+		lineageTag: f5780761-df64-4f10-8762-0ef7632b24e4
+		summarizeBy: none
+		sourceColumn: top_negative_words_agent
+
+		annotation SummarizationSetBy = Automatic
+
+	column sensitive_word_context
+		dataType: string
+		lineageTag: 9e598edc-fb62-42bb-bba2-9fc8e2524d47
+		summarizeBy: none
+		sourceColumn: sensitive_word_context
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data_Theft_or_Misuse_Text
+		dataType: string
+		lineageTag: e75e2101-aba3-41cf-8eab-5d5b78612ab2
+		summarizeBy: none
+		sourceColumn: Data_Theft_or_Misuse_Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unprofessional_Behavior_Text
+		dataType: string
+		lineageTag: a85a8695-b408-46ca-8163-5da3314a3adf
+		summarizeBy: none
+		sourceColumn: Unprofessional_Behavior_Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column System_Manipulation_Text
+		dataType: string
+		lineageTag: 4b7a01ad-9d61-4551-b4ff-478331305c36
+		summarizeBy: none
+		sourceColumn: System_Manipulation_Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column Financial_Fraud_Text
+		dataType: string
+		lineageTag: 1cba02ba-9954-407c-9881-831cb4075220
+		summarizeBy: none
+		sourceColumn: Financial_Fraud_Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column Escalation_Failure_Text
+		dataType: string
+		lineageTag: fede1dc4-7067-4e65-96b5-144a85cbe0b9
+		summarizeBy: none
+		sourceColumn: Escalation_Failure_Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column Collusion_Text
+		dataType: string
+		lineageTag: 4814fee6-d2c7-4be2-b77c-f519b2c68e69
+		summarizeBy: none
+		sourceColumn: Collusion_Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column Policy_Communication_Failure_Text
+		dataType: string
+		lineageTag: 0c7e37b6-36cd-4fe1-96eb-46d95a73d853
+		summarizeBy: none
+		sourceColumn: Policy_Communication_Failure_Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column outstanding_amount
+		dataType: double
+		lineageTag: 7c3f893c-73f8-4fc1-a4e9-513110c60e6f
+		summarizeBy: sum
+		sourceColumn: outstanding_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column customer_voc_logistic_positive
+		dataType: string
+		lineageTag: 38e06371-717b-479c-a7f6-3ca29d6db3c5
+		summarizeBy: none
+		sourceColumn: customer_voc_logistic_positive
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_voc_logistic_negative
+		dataType: string
+		lineageTag: 65e34ef6-e69a-4612-b65a-ef4470069235
+		summarizeBy: none
+		sourceColumn: customer_voc_logistic_negative
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_voc_agent_positive
+		dataType: string
+		lineageTag: b7d34e10-d73e-4c48-8a69-d15580437a3a
+		summarizeBy: none
+		sourceColumn: customer_voc_agent_positive
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_voc_agent_negative
+		dataType: string
+		lineageTag: e0f4c8e0-62a3-4186-9b33-e4126a25f4c7
+		summarizeBy: none
+		sourceColumn: customer_voc_agent_negative
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_voc_product_positive
+		dataType: string
+		lineageTag: 06112522-cd00-4df5-b63f-251099c949b6
+		summarizeBy: none
+		sourceColumn: customer_voc_product_positive
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_voc_product_negative
+		dataType: string
+		lineageTag: e686c6e6-9728-45b8-bdb9-ad073bb75ed9
+		summarizeBy: none
+		sourceColumn: customer_voc_product_negative
+
+		annotation SummarizationSetBy = Automatic
+
+	column Social_Media_Phone_Number_Order_ID_Email_ID
+		dataType: string
+		lineageTag: a42c8b34-bb32-49e6-9f81-ed4a6559e427
+		summarizeBy: none
+		sourceColumn: Social_Media_Phone_Number_Order_ID_Email_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column call_recording
+		dataType: string
+		lineageTag: b026173f-2506-43a1-84b5-1e1b1e898f83
+		summarizeBy: none
+		sourceColumn: call_recording
+
+		annotation SummarizationSetBy = Automatic
+
+	column fraud_and_data_security_compliance
+		dataType: int64
+		formatString: 0
+		lineageTag: 0b9a9b6f-431d-44dc-83fc-e3a9b3a6f4cc
+		summarizeBy: sum
+		sourceColumn: fraud_and_data_security_compliance
+
+		annotation SummarizationSetBy = Automatic
+
+	column fraud_detected_sentence
+		dataType: string
+		lineageTag: 33031381-233c-437d-b26d-e531959718cc
+		summarizeBy: none
+		sourceColumn: fraud_detected_sentence
+
+		annotation SummarizationSetBy = Automatic
+
+	column proper_document_and_video_request_handling
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: decd09c0-ed82-40f4-977f-df07504df58b
+		summarizeBy: none
+		sourceColumn: proper_document_and_video_request_handling
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Audited' = AND(NOT ISBLANK(Quality[quality_percentage]), OR(NOT(Quality[ClientId] IN {"375","409","475"}), Quality[quality_percentage] > 35))
+		dataType: boolean
+		lineageTag: 060aabb9-ff44-4982-843e-7a546c98ba93
+		summarizeBy: none
+
+	column 'Call Date' = DATE(YEAR(Quality[CallDate]), MONTH(Quality[CallDate]), DAY(Quality[CallDate]))
+		dataType: dateTime
+		formatString: dd-mmm-yyyy
+		lineageTag: d409e57f-ed75-4240-8ed5-006faa953296
+		summarizeBy: none
+
+	column 'Fatal Flag' = IF((NOT ISBLANK(Quality[case_escalated_correctly]) && Quality[case_escalated_correctly]=FALSE()) && (NOT ISBLANK(Quality[address_recorded_completely]) && Quality[address_recorded_completely]=FALSE()) && (NOT ISBLANK(Quality[correct_and_complete_information]) && Quality[correct_and_complete_information]=FALSE()), 1, 0)
+		dataType: int64
+		formatString: 0
+		lineageTag: ec7f440e-26bd-42da-8dde-9c522685c6b7
+		summarizeBy: none
+
+	column 'NonFatal Flag' = IF(Quality[case_escalated_correctly]=TRUE() || Quality[address_recorded_completely]=TRUE() || Quality[correct_and_complete_information]=TRUE(), 1, 0)
+		dataType: int64
+		formatString: 0
+		lineageTag: c605f1d1-ffc1-4b96-8ab3-cc9cb807b3b4
+		summarizeBy: none
+
+	column 'CQ Ratio' = IF(Quality[ClientId]="468", VAR n = IF(NOT ISBLANK(Quality[call_answered_within_5_seconds]),1,0)+IF(NOT ISBLANK(Quality[professionalism_maintained]),1,0)+IF(NOT ISBLANK(Quality[assurance_or_appreciation_provided]),1,0)+IF(NOT ISBLANK(Quality[pronunciation_and_clarity]),1,0)+IF(NOT ISBLANK(Quality[enthusiasm_and_no_fumbling]),1,0)+IF(NOT ISBLANK(Quality[active_listening]),1,0)+IF(NOT ISBLANK(Quality[politeness_and_no_sarcasm]),1,0)+IF(NOT ISBLANK(Quality[proper_grammar]),1,0)+IF(NOT ISBLANK(Quality[accurate_issue_probing]),1,0)+IF(NOT ISBLANK(Quality[customer_concern_acknowledged]),1,0)+IF(NOT ISBLANK(Quality[proper_hold_procedure]),1,0)+IF(NOT ISBLANK(Quality[proper_transfer_and_language]),1,0)+IF(NOT ISBLANK(Quality[dead_air_under_10_seconds]),1,0)+IF(NOT ISBLANK(Quality[case_escalated_correctly]),1,0)+IF(NOT ISBLANK(Quality[address_recorded_completely]),1,0)+IF(NOT ISBLANK(Quality[correct_and_complete_information]),1,0)+IF(NOT ISBLANK(Quality[upselling_or_offers_suggested]),1,0)+IF(NOT ISBLANK(Quality[further_assistance_offered]),1,0)+IF(NOT ISBLANK(Quality[proper_call_closure]),1,0)+IF(NOT ISBLANK(Quality[express_empathy]),1,0) VAR p = IF(Quality[call_answered_within_5_seconds]=TRUE(),1,0)+IF(Quality[professionalism_maintained]=TRUE(),1,0)+IF(Quality[assurance_or_appreciation_provided]=TRUE(),1,0)+IF(Quality[pronunciation_and_clarity]=TRUE(),1,0)+IF(Quality[enthusiasm_and_no_fumbling]=TRUE(),1,0)+IF(Quality[active_listening]=TRUE(),1,0)+IF(Quality[politeness_and_no_sarcasm]=TRUE(),1,0)+IF(Quality[proper_grammar]=TRUE(),1,0)+IF(Quality[accurate_issue_probing]=TRUE(),1,0)+IF(Quality[customer_concern_acknowledged]=TRUE(),1,0)+IF(Quality[proper_hold_procedure]=TRUE(),1,0)+IF(Quality[proper_transfer_and_language]=TRUE(),1,0)+IF(Quality[dead_air_under_10_seconds]=TRUE(),1,0)+IF(Quality[case_escalated_correctly]=TRUE(),1,0)+IF(Quality[address_recorded_completely]=TRUE(),1,0)+IF(Quality[correct_and_complete_information]=TRUE(),1,0)+IF(Quality[upselling_or_offers_suggested]=TRUE(),1,0)+IF(Quality[further_assistance_offered]=TRUE(),1,0)+IF(Quality[proper_call_closure]=TRUE(),1,0)+IF(Quality[express_empathy]=TRUE(),1,0) RETURN IF(n=0, BLANK(), DIVIDE(p,n)), VAR n = IF(NOT ISBLANK(Quality[call_answered_within_5_seconds]),1,0)+IF(NOT ISBLANK(Quality[professionalism_maintained]),1,0)+IF(NOT ISBLANK(Quality[assurance_or_appreciation_provided]),1,0)+IF(NOT ISBLANK(Quality[pronunciation_and_clarity]),1,0)+IF(NOT ISBLANK(Quality[enthusiasm_and_no_fumbling]),1,0)+IF(NOT ISBLANK(Quality[active_listening]),1,0)+IF(NOT ISBLANK(Quality[politeness_and_no_sarcasm]),1,0)+IF(NOT ISBLANK(Quality[proper_grammar]),1,0)+IF(NOT ISBLANK(Quality[accurate_issue_probing]),1,0)+IF(NOT ISBLANK(Quality[customer_concern_acknowledged]),1,0)+IF(NOT ISBLANK(Quality[proper_hold_procedure]),1,0)+IF(NOT ISBLANK(Quality[proper_transfer_and_language]),1,0)+IF(NOT ISBLANK(Quality[dead_air_under_10_seconds]),1,0)+IF(NOT ISBLANK(Quality[case_escalated_correctly]),1,0)+IF(NOT ISBLANK(Quality[address_recorded_completely]),1,0)+IF(NOT ISBLANK(Quality[correct_and_complete_information]),1,0)+IF(NOT ISBLANK(Quality[upselling_or_offers_suggested]),1,0)+IF(NOT ISBLANK(Quality[further_assistance_offered]),1,0)+IF(NOT ISBLANK(Quality[proper_call_closure]),1,0) VAR p = IF(Quality[call_answered_within_5_seconds]=TRUE(),1,0)+IF(Quality[professionalism_maintained]=TRUE(),1,0)+IF(Quality[assurance_or_appreciation_provided]=TRUE(),1,0)+IF(Quality[pronunciation_and_clarity]=TRUE(),1,0)+IF(Quality[enthusiasm_and_no_fumbling]=TRUE(),1,0)+IF(Quality[active_listening]=TRUE(),1,0)+IF(Quality[politeness_and_no_sarcasm]=TRUE(),1,0)+IF(Quality[proper_grammar]=TRUE(),1,0)+IF(Quality[accurate_issue_probing]=TRUE(),1,0)+IF(Quality[customer_concern_acknowledged]=TRUE(),1,0)+IF(Quality[proper_hold_procedure]=TRUE(),1,0)+IF(Quality[proper_transfer_and_language]=TRUE(),1,0)+IF(Quality[dead_air_under_10_seconds]=TRUE(),1,0)+IF(Quality[case_escalated_correctly]=TRUE(),1,0)+IF(Quality[address_recorded_completely]=TRUE(),1,0)+IF(Quality[correct_and_complete_information]=TRUE(),1,0)+IF(Quality[upselling_or_offers_suggested]=TRUE(),1,0)+IF(Quality[further_assistance_offered]=TRUE(),1,0)+IF(Quality[proper_call_closure]=TRUE(),1,0) RETURN IF(n=0, BLANK(), DIVIDE(p,n)))
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 90b34a7b-de53-476a-873c-06ad140a3cd8
+		summarizeBy: none
+
+	column 'Opening Ratio' = IF(Quality[scenario1] IN {"Call Drop in between","Short Call/Blank Call"}, 1, VAR n = IF(NOT ISBLANK(Quality[call_answered_within_5_seconds]),1,0) VAR p = IF(Quality[call_answered_within_5_seconds]=TRUE(),1,0) RETURN IF(n=0, BLANK(), DIVIDE(p,n)))
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 4bd764f5-48c0-4c7f-950e-c2a2d7109a25
+		summarizeBy: none
+
+	column 'Soft Ratio' = IF(Quality[scenario1] IN {"Call Drop in between","Short Call/Blank Call"}, 1, VAR n = IF(NOT ISBLANK(Quality[professionalism_maintained]),1,0)+IF(NOT ISBLANK(Quality[assurance_or_appreciation_provided]),1,0)+IF(NOT ISBLANK(Quality[pronunciation_and_clarity]),1,0)+IF(NOT ISBLANK(Quality[enthusiasm_and_no_fumbling]),1,0)+IF(NOT ISBLANK(Quality[active_listening]),1,0)+IF(NOT ISBLANK(Quality[politeness_and_no_sarcasm]),1,0)+IF(NOT ISBLANK(Quality[proper_grammar]),1,0)+IF(NOT ISBLANK(Quality[accurate_issue_probing]),1,0)+IF(NOT ISBLANK(Quality[customer_concern_acknowledged]),1,0) VAR p = IF(Quality[professionalism_maintained]=TRUE(),1,0)+IF(Quality[assurance_or_appreciation_provided]=TRUE(),1,0)+IF(Quality[pronunciation_and_clarity]=TRUE(),1,0)+IF(Quality[enthusiasm_and_no_fumbling]=TRUE(),1,0)+IF(Quality[active_listening]=TRUE(),1,0)+IF(Quality[politeness_and_no_sarcasm]=TRUE(),1,0)+IF(Quality[proper_grammar]=TRUE(),1,0)+IF(Quality[accurate_issue_probing]=TRUE(),1,0)+IF(Quality[customer_concern_acknowledged]=TRUE(),1,0) RETURN IF(n=0, BLANK(), DIVIDE(p,n)))
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 51cdc509-f9ee-43f0-9d86-45338749967d
+		summarizeBy: none
+
+	column 'Hold Ratio' = IF(Quality[scenario1] IN {"Call Drop in between","Short Call/Blank Call"}, 1, VAR n = IF(NOT ISBLANK(Quality[proper_hold_procedure]),1,0)+IF(NOT ISBLANK(Quality[proper_transfer_and_language]),1,0)+IF(NOT ISBLANK(Quality[dead_air_under_10_seconds]),1,0) VAR p = IF(Quality[proper_hold_procedure]=TRUE(),1,0)+IF(Quality[proper_transfer_and_language]=TRUE(),1,0)+IF(Quality[dead_air_under_10_seconds]=TRUE(),1,0) RETURN IF(n=0, BLANK(), DIVIDE(p,n)))
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 443b2973-76df-4fa6-87ad-a3f817f25a61
+		summarizeBy: none
+
+	column 'Resolution Ratio' = IF(Quality[scenario1] IN {"Call Drop in between","Short Call/Blank Call"}, 1, VAR n = IF(NOT ISBLANK(Quality[case_escalated_correctly]),1,0)+IF(NOT ISBLANK(Quality[address_recorded_completely]),1,0)+IF(NOT ISBLANK(Quality[correct_and_complete_information]),1,0)+IF(NOT ISBLANK(Quality[upselling_or_offers_suggested]),1,0) VAR p = IF(Quality[case_escalated_correctly]=TRUE(),1,0)+IF(Quality[address_recorded_completely]=TRUE(),1,0)+IF(Quality[correct_and_complete_information]=TRUE(),1,0)+IF(Quality[upselling_or_offers_suggested]=TRUE(),1,0) RETURN IF(n=0, BLANK(), DIVIDE(p,n)))
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 2f8f49f7-5404-4252-a79c-81f240e34d69
+		summarizeBy: none
+
+	column 'Closing Ratio' = IF(Quality[scenario1] IN {"Call Drop in between","Short Call/Blank Call"}, 1, VAR n = IF(NOT ISBLANK(Quality[further_assistance_offered]),1,0)+IF(NOT ISBLANK(Quality[proper_call_closure]),1,0) VAR p = IF(Quality[further_assistance_offered]=TRUE(),1,0)+IF(Quality[proper_call_closure]=TRUE(),1,0) RETURN IF(n=0, BLANK(), DIVIDE(p,n)))
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 0a5f2295-57fe-4da1-b417-cfea4f29bcf0
+		summarizeBy: none
+
+	column 'Quality Band' = SWITCH(TRUE(), Quality[quality_percentage] >= 98, "1 Excellent", Quality[quality_percentage] >= 90, "2 Good", Quality[quality_percentage] >= 85, "3 Average", Quality[quality_percentage] > 0, "4 Below Average", "5 Zero score")
+		dataType: string
+		lineageTag: c1c5fa7c-5a29-40d4-ac7a-69ec2975d3cb
+		summarizeBy: none
+
+	column 'Call Category' = IF(Quality[Fatal Flag]=1, "Fatal", "Non-fatal")
+		dataType: string
+		lineageTag: ee8a0e33-b10e-491f-8a5d-fe34b9cbf9b4
+		summarizeBy: none
+
+	column 'Duration Bucket' = VAR s = VALUE(Quality[length_in_sec]) RETURN IF(ISBLANK(s), BLANK(), SWITCH(TRUE(), s < 60, "1 Short (<1 min)", s < 301, "2 Average (1-5 min)", s < 600, "3 Long (5-10 min)", "4 Extremely long (>10 min)"))
+		dataType: string
+		lineageTag: 51127f9e-390f-4069-ac81-c3c5bf0ea5a6
+		summarizeBy: none
+
+	column 'Duration Sec' = IFERROR(VALUE(Quality[length_in_sec]), BLANK())
+		dataType: double
+		formatString: 0
+		lineageTag: d6da7c62-1623-45fb-97ec-32a63143f785
+		summarizeBy: none
+
+	column Week = SWITCH(TRUE(), DAY(Quality[CallDate]) <= 7, "Week 1", DAY(Quality[CallDate]) <= 14, "Week 2", DAY(Quality[CallDate]) <= 21, "Week 3", "Week 4")
+		dataType: string
+		lineageTag: 06be4260-6b76-4878-ac48-4ad1a73a5d9f
+		summarizeBy: none
+
+	column 'Abuse Flag' = IF(COALESCE(Quality[agent_english_cuss_count], 0) + COALESCE(Quality[agent_hindi_cuss_count], 0) + COALESCE(Quality[customer_english_cuss_count], 0) + COALESCE(Quality[customer_hindi_cuss_count], 0) > 0, 1, 0)
+		dataType: int64
+		formatString: 0
+		lineageTag: 502684d2-b258-46a9-adf6-066d2210d80f
+		summarizeBy: none
+
+	column 'Scam Flag' = VAR n = LOWER(COALESCE(Quality[top_negative_words], "")) RETURN IF(LOWER(TRIM(COALESCE(Quality[financial_fraud], ""))) = "yes" || SEARCH("scam", n, 1, 0) > 0 || SEARCH("fraud", n, 1, 0) > 0 || SEARCH("cheat", n, 1, 0) > 0 || SEARCH("fake", n, 1, 0) > 0 || SEARCH("loot", n, 1, 0) > 0, 1, 0)
+		dataType: int64
+		formatString: 0
+		lineageTag: 5ea82d75-add9-4380-bb8f-489fca23c635
+		summarizeBy: none
+
+	column 'Social Court Flag' = VAR s = LOWER(COALESCE(Quality[sensetive_word], "")) RETURN IF(Quality[Scam Flag] = 0 && (SEARCH("social", s, 1, 0) > 0 || SEARCH("court", s, 1, 0) > 0 || SEARCH("consumer", s, 1, 0) > 0 || SEARCH("legal", s, 1, 0) > 0 || SEARCH("fir", s, 1, 0) > 0), 1, 0)
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e8c000b-40f0-4e5f-856a-b295e65bd520
+		summarizeBy: none
+
+	partition Quality = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\MAS60358\Desktop\Inbound AI Quality Dashboard v2\Data\quality_data.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Nulls = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, Table.ColumnNames(Promoted)),
+				    Typed = Table.TransformColumnTypes(Nulls, {{"id", Int64.Type}, {"CallDate", type datetime}, {"total_score", Int64.Type}, {"max_score", Int64.Type}, {"quality_percentage", type number}, {"created_at", type datetime}, {"agent_english_cuss_count", Int64.Type}, {"agent_hindi_cuss_count", Int64.Type}, {"customer_hindi_cuss_count", Int64.Type}, {"customer_english_cuss_count", Int64.Type}, {"outstanding_amount", type number}, {"fraud_and_data_security_compliance", Int64.Type}}, "en-US"),
+				    Bools = Table.TransformColumns(Typed, {{"call_answered_within_5_seconds", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"customer_concern_acknowledged", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"professionalism_maintained", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"assurance_or_appreciation_provided", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"pronunciation_and_clarity", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"enthusiasm_and_no_fumbling", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"active_listening", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"politeness_and_no_sarcasm", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"proper_grammar", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"accurate_issue_probing", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"proper_hold_procedure", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"proper_transfer_and_language", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"dead_air_under_10_seconds", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"case_escalated_correctly", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"address_recorded_completely", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"correct_and_complete_information", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"upselling_or_offers_suggested", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"further_assistance_offered", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"proper_call_closure", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"express_empathy", each if _ = null or _ = "" then null else _ = "1", type nullable logical}, {"proper_document_and_video_request_handling", each if _ = null or _ = "" then null else _ = "1", type nullable logical}})
+				in
+				    Bools
+
+	annotation PBI_ResultType = Exception
+
